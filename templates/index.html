@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'styles.css') }}">
+</head>
+<body>
+    <div class="container-right">
+
+        <div class = "searchBox">
+            <form action="{{ url_for('add') }}" method = "post">
+                <input type="text" placeholder="lists url" value="{{request.form['url']}}" name = "url"/>
+                <input type="text" placeholder="name" value="{{request.form['title']}}" name = "title"/>
+                <button type = "submit">Add</button>
+            </form>
+        </div>
+        <div>
+            {% for url in urls %}
+            <div class = "list">
+                <div class="list-item">
+
+                    <form action="{{url_for('fetch', id=url['id'])}}" method="post">
+                        <button type="submit">{{url['title']}}</button>
+                    </form>
+                    <form action="{{url_for('delete', id=url['id'])}}" method="post">
+                        <button type="submit">x</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class = "container">
+        {% for tweet in tweets %}
+        <div>    
+            {{tweet | safe}}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+

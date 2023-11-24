@@ -1,0 +1,74 @@
+body{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    
+}
+.container-right{
+    padding-top: 5rem;
+}
+.container{
+    height: 100vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    max-width: 50%;
+}
+.container::-webkit-scrollbar {
+    display: none;
+}
+.searchBox>form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+.searchBox>form>input{
+    margin-bottom: 1rem;
+    padding: 1rem 0.2rem .75rem .5rem;
+    width: 200px;
+    font-size: 1.2rem;
+    color: rgb(45,45,45);
+}
+.searchBox>form>button{
+    width: 100px;
+    padding: .5rem;
+    background-color: rgb(0, 198, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    height: 200px;
+    overflow-y: scroll;
+    width: 100%;
+    padding: 1rem;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    border: 1px solid rgb(150,150,255);
+}
+.list::-webkit-scrollbar {
+    display: none;
+}
+
+.list-item{
+    display: flex;
+    border: 1px solid gray;
+}
+.list-item>form>button{
+    border-radius: 0;
+    background-color: aqua;
+    padding: .5rem 1rem;
+    border:none;
+}
+.list-item>form>button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
